@@ -1,0 +1,12 @@
+11
+1 Nazar_Protsiv Ohrymovycha_3 380987979344
+2 Dima_Lovyn Stryiska_14 380987544555
+3 Viktor_Syr Livyi_Bereh_3 0684949566
+4 Okasana_Nova Central_87 07966654123
+5 Lubomyr_Sviderskiy Central_st 38056451237
+6 Andriy_Kolim Shechenka_4 2569712358`
+7 Mykola_Boychuk Petrivka_19 980123456789
+8 Myron_Horchak Krakivska_1 3806546
+9 Petro_Petrovych lisova_12 76851589
+10 Andriy_Chystyi Ohrymovyca1 385113658
+11 Nazar_Mahir Nygniy_Val_19 789632145
