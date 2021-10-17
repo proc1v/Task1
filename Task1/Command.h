@@ -6,7 +6,6 @@
 
 class Command {
 private:
-	int dummy_var = 0;
 	Klients_list klients_list;
 	Waters_list waters_list;
 	Orders_list orders_list;
