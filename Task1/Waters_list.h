@@ -12,7 +12,7 @@ public:
 	void readData(string filename);
 	void loadData(string filename) const;
 	
-	void addObject(string name, int volume, double price, bool artesian);
+	//void addObject(string name, int volume, double price, bool artesian);
 	
 	void printData() const;
 };

@@ -31,7 +31,7 @@ void Orders_list::readData(string filename, Waters_list& water_db, Klients_list&
 		db.push_back(Order(order_id, date, Klient(klient_db.find(klient_id)), waters));
 		waters.clear();
 	}
-	Order::id_count = this->getMaxId();
+	Order::id_count = this->getMaxId()+1;
 
 	indata.close();
 }
@@ -59,11 +59,11 @@ void Orders_list::loadData(string filename) const {
 	outdata.close();
 }
 
-void Orders_list::addObject(string date, Klient klient, vector<Water> water) {
+/*void Orders_list::addObject(string date, Klient klient, vector<Water> water) {
 	quantity++;
 	Order::id_count++;
 	db.push_back(Order(Order::id_count, date, klient, water));
-}
+}*/
 
 void Orders_list::printData() const {
 	cout << "ID:  Date:\n";

@@ -25,6 +25,12 @@ public:
 		quantity--;
 	}
 
+	void addObject(Object& obj) {
+		quantity++;
+		//Object::id_count++;
+		db.push_back(obj);
+	}
+
 	virtual void printData() const = 0;
 
 	int getMaxId() const {

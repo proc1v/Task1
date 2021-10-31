@@ -34,7 +34,9 @@ void Command::AddWater() {
 	cout << "Is artesian? (1 - yes, 0 - no): ";
 	cin >> artesian;
 	
-	waters_list.addObject(name, volume, price, artesian);
+	Water object(Water::id_count, name, volume, price, artesian);
+
+	waters_list.addObject(object);
 }
 void Command::DeleteWater() {
 	string answer;
@@ -92,7 +94,9 @@ void Command::AddKlient() {
 	cout << "Enter pnone number: ";
 	cin >> phone_number;
 	
-	klients_list.addObject(name, address, phone_number);
+	Klient klient(Klient::id_count, name, address, phone_number);
+
+	klients_list.addObject(klient);
 }
 void Command::DeleteKlient() {
 	string answer;
@@ -219,7 +223,10 @@ void Command::AddOrder() {
 			return;
 		}
 	}
-	orders_list.addObject(date, klient, water_list);
+
+	Order order(Order::id_count, date, klient, water_list);
+
+	orders_list.addObject(order);
 }
 void Command::DeleteOrder() {
 	string answer;

@@ -12,7 +12,7 @@ public:
 	void readData(string filename);
 	void loadData(string filename) const;
 
-	void addObject(string name, string address, string number);
+	//void addObject(string name, string address, string number);
 
 	void printData() const;
 };

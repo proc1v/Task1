@@ -23,7 +23,7 @@ void Klients_list::readData(string filename) {
 		db.push_back(Klient(id, name, address, phone_number));
 	}
 	
-	Klient::id_count = this->getMaxId();
+	Klient::id_count = this->getMaxId()+1;
 
 	indata.close();
 }
@@ -41,11 +41,11 @@ void Klients_list::loadData(string filename) const {
 	outdata.close();
 }
 
-void Klients_list::addObject(string name, string address, string number) {
+/*void Klients_list::addObject(string name, string address, string number) {
 	quantity++;
 	Klient::id_count++;
 	db.push_back(Klient(Klient::id_count, name, address, number));
-}
+}*/
 
 void Klients_list::printData() const {
 	cout << "ID:  Name:  Address:  Phone number:\n";

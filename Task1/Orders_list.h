@@ -13,7 +13,7 @@ public:
 	void readData(string filename, Waters_list& water_db, Klients_list& klient_db);
 	void loadData(string filename) const;
 
-	void addObject(string date, Klient klient, vector<Water> water);
+	//void addObject(string date, Klient klient, vector<Water> water);
 
 	void printData() const;
 

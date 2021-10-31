@@ -24,7 +24,7 @@ void Waters_list::readData(string filename) {
 
 		db.push_back(Water(id, name, volume, price, artesian));
 	}
-	Water::id_count = this->getMaxId();
+	Water::id_count = this->getMaxId()+1;
 
 	indata.close();
 }
@@ -43,11 +43,11 @@ void Waters_list::loadData(string filename) const{
 	outdata.close();
 }
 
-void Waters_list::addObject(string name, int volume, double price, bool artesian) {
+/*void Waters_list::addObject(string name, int volume, double price, bool artesian) {
 	quantity++;
 	Water::id_count++;
 	db.push_back(Water(Water::id_count, name, volume, price, artesian));
-}
+}*/
 
 void Waters_list::printData() const {
 	cout << "ID:  Name:  Volume:  Price for 1l: Artesian:\n";
