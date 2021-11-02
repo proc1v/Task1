@@ -21,14 +21,14 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{0683fd27-049c-4d79-915b-2ac140a7e271}</ProjectGuid>
-    <RootNamespace>Task1</RootNamespace>
+    <ProjectGuid>{7e810f3e-fcc5-4ab3-8c41-b3fa62324686}</ProjectGuid>
+    <RootNamespace>Admin</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
-    <ProjectName>WaterDelivery</ProjectName>
+    <ProjectName>AdminPanel</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -89,6 +89,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>D:\LNU\practice 3rd sem\Task1_v.0.1\Task1;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,31 +141,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Command.h" />
-    <ClInclude Include="Error.h" />
-    <ClInclude Include="Healpers.h" />
-    <ClInclude Include="Klient.h" />
-    <ClInclude Include="Klients_list.h" />
-    <ClInclude Include="List.h" />
-    <ClInclude Include="Order.h" />
-    <ClInclude Include="Orders_list.h" />
-    <ClInclude Include="Water.h" />
-    <ClInclude Include="Waters_list.h" />
+    <ProjectReference Include="..\Task1\Task1.vcxproj">
+      <Project>{0683fd27-049c-4d79-915b-2ac140a7e271}</Project>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Command.cpp" />
-    <ClCompile Include="Error.cpp" />
-    <ClCompile Include="Klient.cpp" />
-    <ClCompile Include="Klients_list.cpp" />
-    <ClCompile Include="Order.cpp" />
-    <ClCompile Include="Orders_list.cpp" />
-    <ClCompile Include="Water.cpp" />
-    <ClCompile Include="Waters_list.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuAdmin.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="klients_db.txt" />
-    <Text Include="orders_db.txt" />
-    <Text Include="waters_db.txt" />
+    <ClInclude Include="MenuAdmin.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

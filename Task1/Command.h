@@ -15,9 +15,9 @@ private:
 	string orders_db;
 
 public:
-	Command(string klients_db = "klients_db.txt", 
-		string waters_db = "waters_db.txt", 
-		string orders_db = "orders_db.txt");
+	Command(string klients_db = "D:\\LNU\\practice 3rd sem\\Task1_v.0.1\\Task1\\klients_db.txt", 
+		string waters_db = "D:\\LNU\\practice 3rd sem\\Task1_v.0.1\\Task1\\waters_db.txt", 
+		string orders_db = "D:\\LNU\\practice 3rd sem\\Task1_v.0.1\\Task1\\orders_db.txt");
 	~Command();
 
 	//Water
