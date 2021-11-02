@@ -1,8 +1,8 @@
-#include "Menu.h"
+#include "MenuAdmin.h"
 
 int main() {
-	
-	Menu menu;
+
+	MenuAdmin menu;
 	menu.ShowMenu();
 
 	return 0;

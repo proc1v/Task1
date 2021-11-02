@@ -1,13 +1,15 @@
-#ifndef MENU_H
-#define MENU_H
+#ifndef MENU_USER_H
+#define MENU_USER_H
 #include "Command.h"
+//#include "Healpers.h"
 
-class Menu {
+
+class MenuUser {
 public:
 	void ShowMenu();
 private:
 	Command command;
-	
+
 	//Main menu
 	void showMainMenu();
 	void handleMainMenuInput(char userInput);
@@ -18,20 +20,15 @@ private:
 	void handleWaterMenuInput(char userInput);
 	void safeHandleWaterMenuInput(char userInput);
 
-	//Klient
-	void showKlientMenu();
-	void handleKlientMenuInput(char userInput);
-	void safeHandleKlientMenuInput(char userInput);
+	// Access to klients is denied
 
 	//Order
 	void showOrderMenu();
 	void handleOrderMenuInput(char userInput);
 	void safeHandleOrderMenuInput(char userInput);
 
-	//Statistics
-	void showStatisticsMenu();
-	void handleStatisticsMenuInput(char userInput);
-	void safeHandleStatisticsMenuInput(char userInput);
+	//access to Statistics is denied
 };
 
-#endif // !MENU_H
+
+#endif // !MENU_USER_H

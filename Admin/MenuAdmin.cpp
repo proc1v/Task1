@@ -1,10 +1,10 @@
-#include "Menu.h"
+#include "MenuAdmin.h"
 #include "Error.h"
 #include "Healpers.h"
 #include<iostream>
 using namespace std;
 
-void Menu::ShowMenu()
+void MenuAdmin::ShowMenu()
 {
 	char userInput;
 
@@ -18,7 +18,7 @@ void Menu::ShowMenu()
 }
 
 
-void Menu::showMainMenu()
+void MenuAdmin::showMainMenu()
 {
 	//clear_screen();
 
@@ -40,7 +40,7 @@ void Menu::showMainMenu()
 	cout << "0 - Exit.\n";
 	cout << "Your choice >> ";
 }
-void Menu::handleMainMenuInput(char userInput) {
+void MenuAdmin::handleMainMenuInput(char userInput) {
 	switch (userInput)
 	{
 	case '1':
@@ -62,7 +62,7 @@ void Menu::handleMainMenuInput(char userInput) {
 		break;
 	}
 }
-void Menu::safeHandleMainMenuInput(char userInput) {
+void MenuAdmin::safeHandleMainMenuInput(char userInput) {
 	try
 	{
 		handleMainMenuInput(userInput);
@@ -82,7 +82,7 @@ void Menu::safeHandleMainMenuInput(char userInput) {
 }
 
 
-void Menu::showWaterMenu() {
+void MenuAdmin::showWaterMenu() {
 	char userInput;
 
 	clear_screen();
@@ -94,7 +94,7 @@ void Menu::showWaterMenu() {
 		cout << "2 - Add Water;\n";
 		cout << "3 - Delete Water;\n";
 		cout << "4 - Find Water;\n";
-		cout << "0 - Return to main menu.\n";
+		cout << "0 - Return to main MenuAdmin.\n";
 		cout << "Your choice >> ";
 
 		cin >> userInput;
@@ -103,7 +103,7 @@ void Menu::showWaterMenu() {
 		cout << endl;
 	} while (userInput != '0');
 }
-void Menu::handleWaterMenuInput(char userInput) {
+void MenuAdmin::handleWaterMenuInput(char userInput) {
 	switch (userInput)
 	{
 	case '1':
@@ -124,7 +124,7 @@ void Menu::handleWaterMenuInput(char userInput) {
 		break;
 	}
 }
-void Menu::safeHandleWaterMenuInput(char userInput) {
+void MenuAdmin::safeHandleWaterMenuInput(char userInput) {
 	try
 	{
 		handleWaterMenuInput(userInput);
@@ -139,7 +139,7 @@ void Menu::safeHandleWaterMenuInput(char userInput) {
 }
 
 
-void Menu::showKlientMenu() {
+void MenuAdmin::showKlientMenu() {
 	char userInput;
 
 	clear_screen();
@@ -151,7 +151,7 @@ void Menu::showKlientMenu() {
 		cout << "2 - Add Klient;\n";
 		cout << "3 - Delete Klient;\n";
 		cout << "4 - Find Klient;\n";
-		cout << "0 - Return to main menu.\n";
+		cout << "0 - Return to main MenuAdmin.\n";
 		cout << "Your choice >> ";
 
 		cin >> userInput;
@@ -160,7 +160,7 @@ void Menu::showKlientMenu() {
 		cout << endl;
 	} while (userInput != '0');
 }
-void Menu::handleKlientMenuInput(char UserInput) {
+void MenuAdmin::handleKlientMenuInput(char UserInput) {
 	switch (UserInput)
 	{
 	case '1':
@@ -181,7 +181,7 @@ void Menu::handleKlientMenuInput(char UserInput) {
 		break;
 	}
 }
-void Menu::safeHandleKlientMenuInput(char UserInput) {
+void MenuAdmin::safeHandleKlientMenuInput(char UserInput) {
 	try
 	{
 		handleKlientMenuInput(UserInput);
@@ -196,7 +196,7 @@ void Menu::safeHandleKlientMenuInput(char UserInput) {
 }
 
 
-void Menu::showOrderMenu() {
+void MenuAdmin::showOrderMenu() {
 	char userInput;
 
 	clear_screen();
@@ -208,7 +208,7 @@ void Menu::showOrderMenu() {
 		cout << "2 - Add Order;\n";
 		cout << "3 - Delete Order;\n";
 		cout << "4 - Find Order;\n";
-		cout << "0 - Return to main menu.\n";
+		cout << "0 - Return to main MenuAdmin.\n";
 		cout << "Your choice >> ";
 
 		cin >> userInput;
@@ -217,7 +217,7 @@ void Menu::showOrderMenu() {
 		cout << endl;
 	} while (userInput != '0');
 }
-void Menu::handleOrderMenuInput(char UserInput) {
+void MenuAdmin::handleOrderMenuInput(char UserInput) {
 	switch (UserInput)
 	{
 	case '1':
@@ -238,7 +238,7 @@ void Menu::handleOrderMenuInput(char UserInput) {
 		break;
 	}
 }
-void Menu::safeHandleOrderMenuInput(char UserInput) {
+void MenuAdmin::safeHandleOrderMenuInput(char UserInput) {
 	try
 	{
 		handleOrderMenuInput(UserInput);
@@ -253,7 +253,7 @@ void Menu::safeHandleOrderMenuInput(char UserInput) {
 }
 
 
-void Menu::showStatisticsMenu() {
+void MenuAdmin::showStatisticsMenu() {
 	char userInput;
 
 	clear_screen();
@@ -264,7 +264,7 @@ void Menu::showStatisticsMenu() {
 		cout << "1 - Print income;\n";
 		cout << "2 - Water statistics;\n";
 		cout << "3 - Klient statistics;\n";
-		cout << "0 - Return to main menu.\n";
+		cout << "0 - Return to main MenuAdmin.\n";
 		cout << "Your choice >> ";
 
 		cin >> userInput;
@@ -273,7 +273,7 @@ void Menu::showStatisticsMenu() {
 		cout << endl;
 	} while (userInput != '0');
 }
-void Menu::handleStatisticsMenuInput(char userInput) {
+void MenuAdmin::handleStatisticsMenuInput(char userInput) {
 	switch (userInput)
 	{
 	case '1':
@@ -292,7 +292,7 @@ void Menu::handleStatisticsMenuInput(char userInput) {
 		break;
 	}
 }
-void Menu::safeHandleStatisticsMenuInput(char userInput) {
+void MenuAdmin::safeHandleStatisticsMenuInput(char userInput) {
 	try
 	{
 		handleStatisticsMenuInput(userInput);
