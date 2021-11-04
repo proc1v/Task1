@@ -7,7 +7,7 @@ Waters_list::Waters_list(string filename) : List(filename) {
 }
 
 Waters_list::~Waters_list() {
-	//loadData();
+	loadData();
 }
 
 void Waters_list::readData() {
