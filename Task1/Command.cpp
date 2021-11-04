@@ -2,18 +2,17 @@
 #include<iostream>
 using namespace std;
 
-Command::Command(string klients_db, string waters_db, string orders_db) 
-	: klients_db{klients_db}, waters_db{waters_db}, orders_db{orders_db}
+/*Command::Command() 
 {
-	klients_list.readData(klients_db);
-	waters_list.readData(waters_db);
-	orders_list.readData(orders_db, waters_list, klients_list);
+	klients_list.readData();
+	waters_list.readData();
+	orders_list.readData();
 }
 Command::~Command() {
-	klients_list.loadData(klients_db);
-	waters_list.loadData(waters_db);
-	orders_list.loadData(orders_db);
-}
+	klients_list.loadData();
+	waters_list.loadData();
+	orders_list.loadData();
+}*/
 
 
 void Command::PrintWaters() const {

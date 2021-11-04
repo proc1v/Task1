@@ -7,10 +7,11 @@
 
 class Waters_list: public List<Water> {
 public:
-	Waters_list(int quantity = 0);
+	Waters_list(string filename = "D:\\LNU\\practice 3rd sem\\Task1_v.0.1\\Task1\\waters_db.txt");
+	~Waters_list();
 	
-	void readData(string filename);
-	void loadData(string filename) const;
+	void readData();
+	void loadData() const;
 	
 	//void addObject(string name, int volume, double price, bool artesian);
 	

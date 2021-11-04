@@ -2,15 +2,22 @@
 #include<fstream>
 #include<iostream>
 
-Klients_list::Klients_list(int quantity) : List(quantity) {}
+Klients_list::Klients_list(string filename) : List(filename) {
+	readData();
+}
 
-void Klients_list::readData(string filename) {
+Klients_list::~Klients_list() {
+	loadData();
+}
+
+void Klients_list::readData() {
 	ifstream indata(filename);
 	int id;
 	string name;
 	string address;
 	string phone_number;
 
+	indata >> latestUpdate;
 	indata >> quantity;
 
 	for (int i = 0; i < quantity; i++) {
@@ -28,9 +35,10 @@ void Klients_list::readData(string filename) {
 	indata.close();
 }
 
-void Klients_list::loadData(string filename) const {
+void Klients_list::loadData() const {
 	ofstream outdata(filename);
 
+	outdata << latestUpdate << endl;
 	outdata << quantity << endl;
 
 	for (int i = 0; i < quantity; i++) {

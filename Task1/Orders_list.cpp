@@ -3,9 +3,19 @@
 #include<iostream>
 using namespace std;
 
-Orders_list::Orders_list(int quantity) : List(quantity) {}
+Orders_list::Orders_list(string filename) : List(filename) {
+	readData();
+}
 
-void Orders_list::readData(string filename, Waters_list& water_db, Klients_list& klient_db) {
+Orders_list::~Orders_list() {
+	loadData();
+}
+
+void Orders_list::readData() {
+	
+	Waters_list water_db;
+	Klients_list klient_db;
+	
 	ifstream indata(filename);
 	int order_id;
 	string date;
@@ -15,6 +25,7 @@ void Orders_list::readData(string filename, Waters_list& water_db, Klients_list&
 	
 	vector<Water> waters;
 
+	indata >> latestUpdate;
 	indata >> quantity;
 
 	for (int i = 0; i < quantity; i++) {
@@ -36,9 +47,10 @@ void Orders_list::readData(string filename, Waters_list& water_db, Klients_list&
 	indata.close();
 }
 
-void Orders_list::loadData(string filename) const {
+void Orders_list::loadData() const {
 	ofstream outdata(filename);
 
+	outdata << latestUpdate << endl;
 	outdata << quantity << endl;
 	int number_of_waters;
 

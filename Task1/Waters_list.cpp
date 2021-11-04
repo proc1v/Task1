@@ -2,9 +2,15 @@
 #include<fstream>
 #include<iostream>
 
-Waters_list::Waters_list(int quantity) : List(quantity) {}
+Waters_list::Waters_list(string filename) : List(filename) {
+	readData();
+}
 
-void Waters_list::readData(string filename) {
+Waters_list::~Waters_list() {
+	//loadData();
+}
+
+void Waters_list::readData() {
 	ifstream indata(filename);
 	int id;
 	string name;
@@ -12,6 +18,7 @@ void Waters_list::readData(string filename) {
 	double price;
 	bool artesian;
 
+	indata >> latestUpdate;
 	indata >> quantity;
 
 	for (int i = 0; i < quantity; i++) {
@@ -29,9 +36,10 @@ void Waters_list::readData(string filename) {
 	indata.close();
 }
 
-void Waters_list::loadData(string filename) const{
+void Waters_list::loadData() const{
 	ofstream outdata(filename);
 
+	outdata << latestUpdate << endl;
 	outdata << quantity << endl;
 
 	for (int i = 0; i < quantity; i++) {

@@ -9,8 +9,17 @@ class List {
 protected:
 	vector<Object> db;
 	int quantity;
+	string filename;
+	
+	int latestUpdate;
+	bool sync = true;
 public:
-	List(int quantity = 0): quantity { quantity } {}
+	List(string filename = "") : quantity{ 0 }, filename{filename} {
+		//readData();
+	}
+	~List() {
+		//loadData();
+	}
 
 	int getQuantity() const { return quantity; }
 
@@ -31,7 +40,9 @@ public:
 		db.push_back(obj);
 	}
 
-	virtual void printData() const = 0;
+	/*virtual void printData() const = 0;
+	virtual void readData() = 0;
+	virtual void loadData() const = 0;*/
 
 	int getMaxId() const {
 		int max_id = 0;
