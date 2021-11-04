@@ -2,6 +2,7 @@
 #include<string>
 #include<vector>
 #include "Error.h"
+#include<fstream>
 using namespace std;
 
 template<typename Object>
@@ -9,10 +10,37 @@ class List {
 protected:
 	vector<Object> db;
 	int quantity;
-	string filename;
+	string filename = "";
 	
 	int latestUpdate;
 	bool sync = true;
+
+	int getFileUpdate() {
+		ifstream indata(filename);
+		int update;
+		indata >> update;
+
+		indata.close();
+		return update;
+	}
+
+	void syncWrite() {
+		if (sync) {
+			latestUpdate++;
+			loadData();
+		}
+	}
+
+	void syncRead() {
+		int currUpdate = getFileUpdate();
+		if (latestUpdate != currUpdate && sync) {
+			db.clear();
+			
+			readData();
+			latestUpdate = currUpdate;
+		}
+	}
+
 public:
 	List(string filename = "") : quantity{ 0 }, filename{filename} {
 		//readData();
@@ -28,21 +56,27 @@ public:
 	void deleteObject(int id) {
 		db.erase(db.begin() + find_pos(id));
 		quantity--;
+
+		syncWrite();
 	}
 	void deleteObject(string name) {
 		db.erase(db.begin() + find_pos(name));
 		quantity--;
+
+		syncWrite();
 	}
 
 	void addObject(Object& obj) {
 		quantity++;
 		//Object::id_count++;
 		db.push_back(obj);
+
+		syncWrite();
 	}
 
-	/*virtual void printData() const = 0;
+	virtual void printData() = 0;
 	virtual void readData() = 0;
-	virtual void loadData() const = 0;*/
+	virtual void loadData() const = 0;
 
 	int getMaxId() const {
 		int max_id = 0;
@@ -55,6 +89,8 @@ public:
 	}
 
 	Object& find(int id) {
+		syncRead();
+		
 		for (int i = 0; i < quantity; i++) {
 			if (db[i].getId() == id) {
 				return db[i];
@@ -63,6 +99,8 @@ public:
 		throw Error(ErrorCode::WrongId);
 	}
 	Object& find(string name) {
+		syncRead();
+		
 		for (int i = 0; i < quantity; i++) {
 			if (db[i].getName() == name) {
 				return db[i];

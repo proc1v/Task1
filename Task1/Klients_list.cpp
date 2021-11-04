@@ -11,6 +11,9 @@ Klients_list::~Klients_list() {
 }
 
 void Klients_list::readData() {
+	bool prevSync = sync;
+	sync = false;
+	
 	ifstream indata(filename);
 	int id;
 	string name;
@@ -33,6 +36,8 @@ void Klients_list::readData() {
 	Klient::id_count = this->getMaxId()+1;
 
 	indata.close();
+
+	sync = prevSync;
 }
 
 void Klients_list::loadData() const {
@@ -55,7 +60,9 @@ void Klients_list::loadData() const {
 	db.push_back(Klient(Klient::id_count, name, address, number));
 }*/
 
-void Klients_list::printData() const {
+void Klients_list::printData(){
+	syncRead();
+
 	cout << "ID:  Name:  Address:  Phone number:\n";
 	for (int i = 0; i < quantity; i++) {
 		cout << db[i] << endl;

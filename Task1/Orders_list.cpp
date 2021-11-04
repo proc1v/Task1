@@ -12,7 +12,9 @@ Orders_list::~Orders_list() {
 }
 
 void Orders_list::readData() {
-	
+	bool prevSync = sync;
+	sync = false;
+
 	Waters_list water_db;
 	Klients_list klient_db;
 	
@@ -45,6 +47,8 @@ void Orders_list::readData() {
 	Order::id_count = this->getMaxId()+1;
 
 	indata.close();
+
+	sync = prevSync;
 }
 
 void Orders_list::loadData() const {
@@ -77,7 +81,9 @@ void Orders_list::loadData() const {
 	db.push_back(Order(Order::id_count, date, klient, water));
 }*/
 
-void Orders_list::printData() const {
+void Orders_list::printData() {
+	syncRead();
+	
 	cout << "ID:  Date:\n";
 	for (int i = 0; i < quantity; i++) {
 		cout << db[i] << endl;

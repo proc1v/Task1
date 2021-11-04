@@ -18,7 +18,7 @@ public:
 
 	//void addObject(string date, Klient klient, vector<Water> water);
 
-	void printData() const;
+	void printData();
 
 };
 

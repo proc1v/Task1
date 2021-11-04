@@ -19,19 +19,19 @@ public:
 	//~Command();
 
 	//Water
-	void PrintWaters() const;
+	void PrintWaters();
 	void AddWater();
 	void DeleteWater();
 	void FindWater();
 
 	//Klient
-	void PrintKlients() const;
+	void PrintKlients();
 	void AddKlient();
 	void DeleteKlient();
 	void FindKlient();
 
 	//Orders
-	void PrintOrders() const;
+	void PrintOrders();
 	void AddOrder();
 	void DeleteOrder();
 	void FindOrder();

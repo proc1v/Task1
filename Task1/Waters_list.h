@@ -15,7 +15,7 @@ public:
 	
 	//void addObject(string name, int volume, double price, bool artesian);
 	
-	void printData() const;
+	void printData();
 };
 
 #endif // !WATERS_LIST_H

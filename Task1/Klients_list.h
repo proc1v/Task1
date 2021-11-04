@@ -15,7 +15,7 @@ public:
 
 	//void addObject(string name, string address, string number);
 
-	void printData() const;
+	void printData();
 };
 
 #endif // !KLIENTS_LIST_H

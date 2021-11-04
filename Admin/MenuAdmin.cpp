@@ -20,7 +20,7 @@ void MenuAdmin::ShowMenu()
 
 void MenuAdmin::showMainMenu()
 {
-	//clear_screen();
+	clear_screen();
 
 	cout << R"(
  __          __   _              _____       _ _                      
@@ -32,6 +32,18 @@ void MenuAdmin::showMainMenu()
                                                                  __/ |
                                                                 |___/ 
 )";
+
+	cout << R"(
+              _           _         _____                 _ 
+     /\      | |         (_)       |  __ \               | |
+    /  \   __| |_ __ ___  _ _ __   | |__) |_ _ _ __   ___| |
+   / /\ \ / _` | '_ ` _ \| | '_ \  |  ___/ _` | '_ \ / _ \ |
+  / ____ \ (_| | | | | | | | | | | | |  | (_| | | | |  __/ |
+ /_/    \_\__,_|_| |_| |_|_|_| |_| |_|   \__,_|_| |_|\___|_|
+                                                            
+                                                            
+)";
+
 	cout << "\nPlease select an option:\n";
 	cout << "1 - Waters list;\n";
 	cout << "2 - Klients list;\n";

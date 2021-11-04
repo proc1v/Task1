@@ -15,7 +15,7 @@ Command::~Command() {
 }*/
 
 
-void Command::PrintWaters() const {
+void Command::PrintWaters(){
 	waters_list.printData();
 }
 void Command::AddWater() {
@@ -78,7 +78,7 @@ void Command::FindWater() {
 }
 
 
-void Command::PrintKlients() const {
+void Command::PrintKlients(){
 	klients_list.printData();
 }
 void Command::AddKlient() {
@@ -136,7 +136,7 @@ void Command::FindKlient() {
 }
 
 
-void Command::PrintOrders() const {
+void Command::PrintOrders(){
 	orders_list.printData();
 }
 void Command::AddOrder() {

@@ -11,6 +11,9 @@ Waters_list::~Waters_list() {
 }
 
 void Waters_list::readData() {
+	bool prevSync = sync;
+	sync = false;
+	
 	ifstream indata(filename);
 	int id;
 	string name;
@@ -34,6 +37,8 @@ void Waters_list::readData() {
 	Water::id_count = this->getMaxId()+1;
 
 	indata.close();
+
+	sync = prevSync;
 }
 
 void Waters_list::loadData() const{
@@ -57,7 +62,9 @@ void Waters_list::loadData() const{
 	db.push_back(Water(Water::id_count, name, volume, price, artesian));
 }*/
 
-void Waters_list::printData() const {
+void Waters_list::printData() {
+	syncRead();
+	
 	cout << "ID:  Name:  Volume:  Price for 1l: Artesian:\n";
 	for (int i = 0; i < quantity; i++) {
 		cout << db[i] << endl;
