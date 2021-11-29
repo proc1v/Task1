@@ -106,6 +106,7 @@ void MenuAdmin::showWaterMenu() {
 		cout << "2 - Add Water;\n";
 		cout << "3 - Delete Water;\n";
 		cout << "4 - Find Water;\n";
+		cout << "5 - Undo;\n";
 		cout << "0 - Return to main MenuAdmin.\n";
 		cout << "Your choice >> ";
 
@@ -129,6 +130,8 @@ void MenuAdmin::handleWaterMenuInput(char userInput) {
 		break;
 	case '4':
 		command.FindWater();
+	case '5':
+		command.UndoWaters();
 	case '0':
 		break;
 	default:
@@ -163,6 +166,7 @@ void MenuAdmin::showKlientMenu() {
 		cout << "2 - Add Klient;\n";
 		cout << "3 - Delete Klient;\n";
 		cout << "4 - Find Klient;\n";
+		cout << "5 - Undo;\n";
 		cout << "0 - Return to main MenuAdmin.\n";
 		cout << "Your choice >> ";
 
@@ -186,6 +190,8 @@ void MenuAdmin::handleKlientMenuInput(char UserInput) {
 		break;
 	case '4':
 		command.FindKlient();
+	case '5':
+		command.UndoKlients();
 	case '0':
 		break;
 	default:
@@ -220,6 +226,7 @@ void MenuAdmin::showOrderMenu() {
 		cout << "2 - Add Order;\n";
 		cout << "3 - Delete Order;\n";
 		cout << "4 - Find Order;\n";
+		cout << "5 - Undo;\n";
 		cout << "0 - Return to main MenuAdmin.\n";
 		cout << "Your choice >> ";
 
@@ -243,6 +250,8 @@ void MenuAdmin::handleOrderMenuInput(char UserInput) {
 		break;
 	case '4':
 		command.FindOrder();
+	case '5':
+		command.UndoWaters();
 	case '0':
 		break;
 	default:

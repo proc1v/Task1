@@ -19,6 +19,7 @@ void Command::PrintWaters(){
 	waters_list.printData();
 }
 void Command::AddWater() {
+	
 	string name;
 	int volume;
 	double price;
@@ -33,8 +34,9 @@ void Command::AddWater() {
 	cout << "Is artesian? (1 - yes, 0 - no): ";
 	cin >> artesian;
 	
+	WatersMemento_list.push_back(waters_list.createMemento());
+	
 	Water object(Water::id_count, name, volume, price, artesian);
-
 	waters_list.addObject(object);
 }
 void Command::DeleteWater() {
@@ -45,11 +47,15 @@ void Command::DeleteWater() {
 	if (answer == "id") {
 		cout << "Enter ID: ";
 		cin >> id;
+		
+		WatersMemento_list.push_back(waters_list.createMemento());
 		waters_list.deleteObject(id);
 	}
 	else if (answer == "name") {
 		cout << "Enter name: ";
 		cin >> answer;
+		
+		WatersMemento_list.push_back(waters_list.createMemento());
 		waters_list.deleteObject(answer);
 	}
 	else {
@@ -76,6 +82,15 @@ void Command::FindWater() {
 		throw Error(ErrorCode::WrongCommand);
 	}
 }
+void Command::UndoWaters() {
+	if (WatersMemento_list.empty()) {
+		throw Error(LatestMemento);
+	}
+	waters_list.reinstateMemento(WatersMemento_list[WatersMemento_list.size() - 1]);
+	WatersMemento_list.pop_back();
+
+	waters_list.syncWrite();
+}
 
 
 void Command::PrintKlients(){
@@ -93,8 +108,9 @@ void Command::AddKlient() {
 	cout << "Enter pnone number: ";
 	cin >> phone_number;
 	
+	KlientsMemento_list.push_back(klients_list.createMemento());
+	
 	Klient klient(Klient::id_count, name, address, phone_number);
-
 	klients_list.addObject(klient);
 }
 void Command::DeleteKlient() {
@@ -105,11 +121,15 @@ void Command::DeleteKlient() {
 	if (answer == "id") {
 		cout << "Enter ID: ";
 		cin >> id;
+		
+		KlientsMemento_list.push_back(klients_list.createMemento());
 		klients_list.deleteObject(id);
 	}
 	else if (answer == "name") {
 		cout << "Enter name: ";
 		cin >> answer;
+		
+		KlientsMemento_list.push_back(klients_list.createMemento());
 		klients_list.deleteObject(answer);
 	}
 	else {
@@ -133,6 +153,15 @@ void Command::FindKlient() {
 	else {
 		throw Error(ErrorCode::WrongCommand);
 	}
+}
+void Command::UndoKlients() {
+	if (KlientsMemento_list.empty()) {
+		throw Error(LatestMemento);
+	}
+	klients_list.reinstateMemento(KlientsMemento_list[KlientsMemento_list.size() - 1]);
+	KlientsMemento_list.pop_back();
+
+	klients_list.syncWrite();
 }
 
 
@@ -223,8 +252,8 @@ void Command::AddOrder() {
 		}
 	}
 
+	OrdersMemento_list.push_back(orders_list.createMemento());
 	Order order(Order::id_count, date, klient, water_list);
-
 	orders_list.addObject(order);
 }
 void Command::DeleteOrder() {
@@ -233,6 +262,7 @@ void Command::DeleteOrder() {
 	
 	cout << "Enter ID: ";
 	cin >> id;
+	OrdersMemento_list.push_back(orders_list.createMemento());
 	orders_list.deleteObject(id);
 }
 void Command::FindOrder() {
@@ -242,6 +272,15 @@ void Command::FindOrder() {
 	cout << "Enter ID: ";
 	cin >> id;
 	cout << orders_list.find(id).toString();
+}
+void Command::UndoOrders() {
+	if (OrdersMemento_list.empty()) {
+		throw Error(LatestMemento);
+	}
+	orders_list.reinstateMemento(OrdersMemento_list[OrdersMemento_list.size() - 1]);
+	OrdersMemento_list.pop_back();
+
+	orders_list.syncWrite();
 }
 
 

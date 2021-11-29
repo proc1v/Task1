@@ -146,6 +146,7 @@
     <ClInclude Include="Klient.h" />
     <ClInclude Include="Klients_list.h" />
     <ClInclude Include="List.h" />
+    <ClInclude Include="Memento.h" />
     <ClInclude Include="Order.h" />
     <ClInclude Include="Orders_list.h" />
     <ClInclude Include="Water.h" />
@@ -156,6 +157,7 @@
     <ClCompile Include="Error.cpp" />
     <ClCompile Include="Klient.cpp" />
     <ClCompile Include="Klients_list.cpp" />
+    <ClCompile Include="Memento.cpp" />
     <ClCompile Include="Order.cpp" />
     <ClCompile Include="Orders_list.cpp" />
     <ClCompile Include="Water.cpp" />

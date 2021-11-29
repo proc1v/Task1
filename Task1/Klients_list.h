@@ -13,6 +13,16 @@ public:
 	void readData();
 	void loadData() const;
 
+	Memento<Klient>* createMemento()
+	{
+		return new Memento<Klient>(db, quantity);
+	}
+	void reinstateMemento(Memento<Klient>* mem)
+	{
+		db = mem->_State;
+		quantity = mem->_quantity;
+	}
+
 	//void addObject(string name, string address, string number);
 
 	void printData();

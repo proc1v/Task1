@@ -16,6 +16,16 @@ public:
 	void readData();
 	void loadData() const;
 
+	Memento<Order>* createMemento()
+	{
+		return new Memento<Order>(db, quantity);
+	}
+	void reinstateMemento(Memento<Order>* mem)
+	{
+		db = mem->_State;
+		quantity = mem->_quantity;
+	}
+
 	//void addObject(string date, Klient klient, vector<Water> water);
 
 	void printData();

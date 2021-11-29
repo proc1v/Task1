@@ -12,6 +12,16 @@ public:
 	
 	void readData();
 	void loadData() const;
+
+	Memento<Water>* createMemento()
+	{
+		return new Memento<Water>(db, quantity);
+	}
+	void reinstateMemento(Memento<Water>* mem)
+	{
+		db = mem->_State;
+		quantity = mem->_quantity;
+	}
 	
 	//void addObject(string name, int volume, double price, bool artesian);
 	

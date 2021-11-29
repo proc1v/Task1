@@ -17,6 +17,8 @@ string Error::ToString()
 		return "Negative value";
 	case WrongCommand:
 		return "Wrong command";
+	case LatestMemento:
+		return "No actions left to undo";
 	default:
 		return "Undefined error";
 	}

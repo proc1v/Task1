@@ -9,7 +9,8 @@ enum ErrorCode
 	WrongId,
 	WrongName,
 	NegativeValue,
-	WrongCommand
+	WrongCommand,
+	LatestMemento
 };
 
 class Error

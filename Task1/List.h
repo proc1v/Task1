@@ -2,6 +2,7 @@
 #include<string>
 #include<vector>
 #include "Error.h"
+#include "Memento.h"
 #include<fstream>
 using namespace std;
 
@@ -24,6 +25,14 @@ protected:
 		return update;
 	}
 
+public:
+	List(string filename = "") : quantity{ 0 }, filename{filename} {
+		//readData();
+	}
+	~List() {
+		//loadData();
+	}
+
 	void syncWrite() {
 		if (sync) {
 			latestUpdate++;
@@ -35,19 +44,20 @@ protected:
 		int currUpdate = getFileUpdate();
 		if (latestUpdate != currUpdate && sync) {
 			db.clear();
-			
+
 			readData();
 			latestUpdate = currUpdate;
 		}
 	}
 
-public:
-	List(string filename = "") : quantity{ 0 }, filename{filename} {
-		//readData();
+	/*Memento<Object>* createMemento()
+	{
+		return new Memento<Object>(db);
 	}
-	~List() {
-		//loadData();
-	}
+	void reinstateMemento(Memento<Object>* mem)
+	{
+		db = mem->_State;
+	}*/
 
 	int getQuantity() const { return quantity; }
 

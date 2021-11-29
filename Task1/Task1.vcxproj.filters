@@ -45,6 +45,9 @@
     <ClInclude Include="Healpers.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Memento.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Water.cpp">
@@ -69,6 +72,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Command.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Memento.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
